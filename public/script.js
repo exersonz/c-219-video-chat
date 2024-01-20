@@ -82,6 +82,39 @@ $(function () {
         }
     })
 
+    $("#stop_video").click(function(){
+        // fetching wheter or not the system has enabled video and toggling it when pressing mute btn
+        const enabled = myStream.getVideoTracks()[0].enabled;
+        if(enabled){
+            myStream.getVideoTracks()[0].enabled = false;
+            html = `<i class = "fa fa-video-slash"></i>`;
+            $("#stop_video").toggleClass("background_red");
+            $("#stop_video").html(html); // applying changes
+        }
+        else{
+            myStream.getVideoTracks()[0].enabled = true;
+            html = `<i class = "fa fa-video"></i>`;
+            $("#stop_video").toggleClass("background_blue");
+            $("#stop_video").html(html); // applying changes
+        }
+    })
+
+    $("#mute_button").click(function(){
+        // fetching wheter or not the system has enabled audio and toggling it when pressing mute btn
+        const enabled = myStream.getAudioTracks()[0].enabled;
+        if(enabled){
+            myStream.getAudioTracks()[0].enabled = false;
+            html = `<i class = "fa fa-microphone-slash"></i>`;
+            $("#mute_button").toggleClass("background_red");
+            $("#mute_button").html(html); // applying changes
+        }
+        else{
+            myStream.getAudioTracks()[0].enabled = true;
+            html = `<i class = "fa fa-microphone"></i>`;
+            $("#mute_button").toggleClass("background_blue");
+            $("#mute_button").html(html); // applying changes
+        }
+    })
 })
 
 peer.on("open", (id) => {

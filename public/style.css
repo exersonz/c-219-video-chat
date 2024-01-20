@@ -3,7 +3,7 @@
 :root {
   --main-darklg: #1d2635;
   --main-dark: #161d29;
-  --primary-color: #2f80ec;
+  --primary-color: cornflowerblue;
   --main-light: #eeeeee;
   font-family: "Poppins", sans-serif;
 }
@@ -118,6 +118,14 @@ video {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
+}
+
+.background_red{
+  background-color: coral;
+}
+
+.background_blue{
+  background-color: cornflowerblue;
 }
 
 @media (max-width: 700px) {
